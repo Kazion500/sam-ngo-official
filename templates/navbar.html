@@ -1,0 +1,202 @@
+{% load static %}
+<header class="main-header" style="background-color: white">
+  <div class="container">
+    <div class="inner-container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2">
+          <div class="logo-box">
+            <a href="{% url 'home' %}" aria-label="logo image"
+              ><img src=" {% static 'assets/images/logo.png' %} " width="101" alt=""
+            /></a>
+            <span class="fa fa-bars mobile-nav__toggler"></span>
+          </div>
+          <!-- /.logo-box -->
+        </div>
+        <!-- /.col-sm-12 -->
+        <div
+          class="
+            col-sm-12 col-md-12 col-lg-12 col-xl-10
+            d-none d-md-none d-lg-none d-xl-block
+          "
+        >
+          <div class="main-header__top">
+            <p>Welcome to non profit charity platform</p>
+            <div class="main-header__social">
+              <a href="#" aria-label="twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="facebook"
+                ><i class="fab fa-facebook-square"></i
+              ></a>
+              <a href="#" aria-label="pinterest"
+                ><i class="fab fa-pinterest-p"></i
+              ></a>
+              <a href="#" aria-label="instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <!-- /.main-header__social -->
+          </div>
+          <!-- /.main-header__top -->
+          <nav class="main-menu dynamic-radius">
+          
+            <!-- /.main-menu__list -->
+          </nav>
+          <!-- /.main-menu -->
+          <div class="main-header__info">
+            <ul class="list-unstyled main-header__info-list">
+              <li>
+                <i class="azino-icon-email"></i>
+                <a href="mailto:needhelp@azino.com">project@samgroup.world</a>
+              </li>
+              <li>
+                <i class="azino-icon-telephone"></i>
+                <a href="tel:666-888-0000">666 888 0000</a>
+              </li>
+            </ul>
+            <!-- /.list-unstyled -->
+            <div
+              class="main-header__language"
+              style="color: white; position: relative;"
+            >
+            {% if request.user.is_authenticated %}
+              <div class="card" id="img-profile" style='width:50px;height:50px; border-radius:50%'></div>
+            {% else %}
+            <div >
+              <a href="#signup" class="btn btn-success">Become a Member</a>
+              <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Login</a>
+            </div>
+           
+            {% endif %}
+            <div class='mt-3 text-dark card-account' style='position:absolute;top:100%;right:10%; width:300px'>
+              <ul class="list-group">
+                <li class="list-group-item" ><a href="{% url 'logout' %}">Logout</a></li>
+                <li class="list-group-item"><a href="">Account</a></li>
+              </ul>
+            </div>
+            </div>
+            <!-- /.main-header__language -->
+          </div>
+          <!-- /.main-header__info -->
+        </div>
+        <!-- /.col-sm-12 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.inner-container -->
+  </div>
+  <!-- /.container -->
+</header>
+<!-- /.main-header -->
+
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content  w-75 mx-auto">
+      <div class="modal-header">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{% url 'log_in' %}" method='POST' id="loginForm">
+          {% csrf_token %}
+           <div class="form-group">
+              <label for="formGroupExampleInput">Email</label>
+              <input type="email" name='email' class="form-control" id="InputEmail" placeholder="E-mail address">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Password</label>
+              <input type="text" name='password' class="form-control" id="InputPassword" placeholder="Password">
+            </div>
+
+             <small class='float-right'><a href="">Forgot password?</a></small>
+        
+          <div>
+           
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="stricky-header stricked-menu">
+  <div class="container">
+    <div class="logo-box">
+      <a href="{% url 'home' %}"
+        ><img
+          src="{% static 'assets/images/logo.png' %}"
+          width="101"
+          alt=""
+      /></a>
+    </div>
+    <!-- /.logo-box -->
+    <div class="p-3" style='position: relative;'>
+     <div class="main-header__language" style="color: white; display: flex; gap: 10px">
+        {% if request.user.is_authenticated %}
+              {{request.user.get_full_name}}
+        {% else %}
+          <a href="#signup" class="btn btn-success">Become a Member</a>
+        {% endif %}
+      </div>
+
+    </div>
+    <!-- /.sticky-header__content -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.stricky-header -->
+
+<div style="background-color: white" class="mobile-nav__wrapper">
+  <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+  <!-- /.mobile-nav__overlay -->
+  <div class="mobile-nav__content">
+    <span class="mobile-nav__close mobile-nav__toggler"
+      ><i class="far fa-times"></i
+    ></span>
+
+    <div class="logo-box">
+      <a href="index.html" aria-label="logo image"
+        ><img src="{% static 'assets/images/logo.png' %}" width="101" alt=""
+      /></a>
+    </div>
+    <!-- /.logo-box -->
+    <div class="mobile-nav__container"></div>
+    <!-- /.mobile-nav__container -->
+
+    <ul class="mobile-nav__contact list-unstyled">
+      <li>
+        <i class="azino-icon-email"></i>
+        <a href="mailto:needhelp@azino.com">project@samgroup.world</a>
+      </li>
+      {% comment %} <li>
+        <i class="azino-icon-telephone"></i>
+        <a href="tel:666-888-0000">666 888 0000</a>
+      </li> {% endcomment %}
+    </ul>
+    <!-- /.mobile-nav__contact -->
+    <div class="mobile-nav__top">
+      <!-- /.mobile-nav__language -->
+      <div class="mobile-nav__social">
+        <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="facebook"
+          ><i class="fab fa-facebook-square"></i
+        ></a>
+        <a href="#" aria-label="pinterest"
+          ><i class="fab fa-pinterest-p"></i
+        ></a>
+        <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <!-- /.mobile-nav__social -->
+    </div>
+    <!-- /.mobile-nav__top -->
+  </div>
+  <!-- /.mobile-nav__content -->
+</div>
+<!-- /.mobile-nav__wrapper -->

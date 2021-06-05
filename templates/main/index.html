@@ -1,0 +1,314 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="page-wrapper">
+ {% if messages %} {% for message in messages %}
+          <div
+            class="alert alert-{% if message.tags  == 'error'%}danger {% else %}success {% endif %} alert-dismissible fade show  "
+            role="alert"
+          >
+            {{ message }}
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endfor %} {% endif %}
+  <section class="main-slider" style="position: relative">
+    <div class="swiper-slide">
+      <video
+        id="video-world"
+        class="bg-video"
+        autoplay
+        muted
+        loop
+        style="
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          min-width: 100%;
+          min-height: 100%;
+          
+        "
+      >
+        <source src="/static/assets/video/world.webm" type="video/webm" />
+      </video>
+      <div class="container">
+        <div class="row justify-content-end">
+          <div
+            class="col-xl-7 col-lg-12 text-right text-white"
+            style="position: relative; z-index: 1"
+          >
+            <p>Help the poor in need</p>
+            <h2>
+              Lend the <br />
+              helping hand <br />
+              get involved.
+            </h2>
+            <a
+              href="#"
+              data-target=".donate-options"
+              class="scroll-to-target thm-btn dynamic-radius"
+              >Start Donating</a
+            >
+            <!-- /.thm-btn dynamic-radius -->
+          </div>
+          <!-- /.col-lg-7 text-right -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <div class="swiper-pagination" id="main-slider-pagination"></div>
+    </div>
+    <!-- /.swiper-container thm-swiper__slider -->
+  </section>
+
+  {% comment %}
+  <section
+    class="service-one pt-120 pb-90"
+    style="
+      background-image: url(assets/images/backgrounds/service-hand-bg-1-1.png);
+    "
+  >
+    <div class="container">
+      <img
+        src="assets/images/shapes/service-line-1-1.png"
+        alt=""
+        class="service-one__shape-1"
+      />
+      <div class="block-title">
+        <p>
+          <img
+            src="assets/images/shapes/heart-2-1.png"
+            width="15"
+            alt=""
+          />Welcome to Azino Charity
+        </p>
+        <h3>
+          We believe that we can save <br />
+          more lifes with you.
+        </h3>
+      </div>
+      <!-- /.block-title -->
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="service-one__box">
+            <div class="service-one__icon background-secondary">
+              <div class="service-one__icon-inner">
+                <i class="azino-icon-water-bottle"></i>
+              </div>
+              <!-- /.service-one__icon-inner -->
+            </div>
+            <!-- /.service-one__icon -->
+            <h3><a href="#">Water</a></h3>
+            <p>
+              Lorem ipsum is simply free text available in the market wesbites.
+            </p>
+          </div>
+          <!-- /.service-one__box -->
+        </div>
+        <!-- /.col-md-6 col-lg-3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-one__box">
+            <div class="service-one__icon background-base">
+              <div class="service-one__icon-inner">
+                <i class="azino-icon-hamburger"></i>
+              </div>
+              <!-- /.service-one__icon-inner -->
+            </div>
+            <!-- /.service-one__icon -->
+            <h3><a href="#">Food</a></h3>
+            <p>
+              Lorem ipsum is simply free text available in the market wesbites.
+            </p>
+          </div>
+          <!-- /.service-one__box -->
+        </div>
+        <!-- /.col-md-6 col-lg-3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-one__box">
+            <div class="service-one__icon background-primary">
+              <div class="service-one__icon-inner">
+                <i class="azino-icon-reading-book"></i>
+              </div>
+              <!-- /.service-one__icon-inner -->
+            </div>
+            <!-- /.service-one__icon -->
+            <h3><a href="#">Education</a></h3>
+            <p>
+              Lorem ipsum is simply free text available in the market wesbites.
+            </p>
+          </div>
+          <!-- /.service-one__box -->
+        </div>
+        <!-- /.col-md-6 col-lg-3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-one__box">
+            <div class="service-one__icon background-special">
+              <div class="service-one__icon-inner">
+                <i class="azino-icon-stethoscope"></i>
+              </div>
+              <!-- /.service-one__icon-inner -->
+            </div>
+            <!-- /.service-one__icon -->
+            <h3><a href="#">Medical</a></h3>
+            <p>
+              Lorem ipsum is simply free text available in the market wesbites.
+            </p>
+          </div>
+          <!-- /.service-one__box -->
+        </div>
+        <!-- /.col-md-6 col-lg-3 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.service-one -->
+  {% endcomment %}
+
+  <section class="about-counter pb-120">
+    <div class="container">
+      <div class="row p-5">
+        <div class="col-lg-6">
+          <div class="block-title">
+            <p>
+              <img
+                src="assets/images/shapes/heart-2-1.png"
+                width="15"
+                alt=""
+              />Who We Are
+            </p>
+            <h3>SAM</h3>
+          </div>
+          <!-- /.block-title -->
+          <p class="about-counter__text">
+            SAM Group is a movement embracing conscientious individuals from
+            around the globe on a mission to restore balance and achieve peace
+            on earth. We aspire to live in a society with no upper hand
+            dominating the world from behind the scenes, inflicting injustice
+            and stifling freedom. Following our vision, we have created this
+            movement to break the silence around the chaotic world we live in
+            (or the hidden issues that intoxicate our world today) and
+            collaborate in hopes to change the world and reclaim power.
+          </p>
+        </div>
+        <!-- /.col-lg-6 -->
+        <div class="col-lg-6">
+          <div
+            class="about-counter__image clearfix wow fadeInRight"
+            data-wow-duration="1500ms"
+          >
+            <div class="about-counter__image-content">
+              <img
+                src="assets/images/shapes/about-count-heart-1-1.png"
+                alt=""
+              />
+              <p>We’re here to support you every step of the way.</p>
+            </div>
+            <!-- /.about-counter__image-content -->
+            <img
+              src="assets/images/resources/about-counter-1-1.jpg"
+              alt=""
+              class="float-left"
+            />
+          </div>
+          <!-- /.about-counter__image -->
+        </div>
+        <!-- /.col-lg-6 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.containerr -->
+  </section>
+  <!-- /.about-counter -->
+</div>
+<!-- /.page-wrapper -->
+
+<div class="page-wrapper pb-80 pt-80" id="signup">
+  <section class="become-volunteer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="become-volunteer__content mb-40">
+            <div class="block-title">
+              <p>
+                <img
+                  src="assets/images/shapes/heart-2-1.png"
+                  width="15"
+                  alt=""
+                />Join Us Now
+              </p>
+              <h3>Register as Member.</h3>
+            </div>
+            <!-- /.block-title -->
+            <p class="block-text mb-40 pr-10">
+             Join us as we make the world a better place!!
+            </p>
+          </div>
+          <!-- /.become-volunteer__content -->
+        </div>
+        <!-- /.col-lg-5 -->
+        <div class="col-lg-7">
+         
+          <form method="POST" action="{% url 'home' %}">
+            {% csrf_token %}
+            <div class="form-row mb-3">
+              <div class="col-6">{{ form.first_name }}</div>
+              <div class="col-6">{{ form.last_name }}</div>
+            </div>
+            <div class="form-row mb-3">
+              <div class="col">
+                {{ form.phone }} {% for error in form.phone.errors %}
+                <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+              </div>
+              <div class="col-6">
+                {{ form.email }} {% for error in form.email.errors %}
+                <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="form-row mb-3">
+              <div class="col">{{ form.address }}</div>
+              <div class="col">{{ form.occupation }}</div>
+            </div>
+            <div class="form-row mb-3">
+              <div class="col">
+                {{ form.password1 }} {% for error in form.password1.errors %}
+                <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+              </div>
+              <div class="col">
+                {{ form.password2 }} {% for error in form.password2.errors %}
+                <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="form-row mb-3">
+              <div class="col">{{ form.message }}</div>
+            </div>
+            <div class="form-row mb-3">
+              <div class="col">
+                <button type="submit" class="btn btn-success">
+                  Register Now
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="result"></div>
+          <!-- /.result -->
+        </div>
+        <!-- /.col-lg-7 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.become-volunteer -->
+</div>
+<!-- /.page-wrapper -->
+
+{% endblock content %}
