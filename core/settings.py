@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = evn("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["sam-ngo.herokuapp.com", "localhost", "127.0.0.1"]
 
@@ -84,13 +84,13 @@ else:
 
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-            'NAME': 'dd83sq4ej7nqid',
+            'NAME': 'd8ckdaccoq3i0m',
 
-            'USER': 'fddvdkkfvvzhtm',
+            'USER': 'yxyyehlsqhmufk',
 
-            'PASSWORD': '51cef78a2d04e194e0346ab63eae8b87cf58a7507f9fd0266ca898336839a13c',
+            'PASSWORD': '71ca5688359fe930b153d6d8fa0168a3599708ec243f5216823992935eb50e3e',
 
-            'HOST': 'ec2-34-202-5-87.compute-1.amazonaws.com',
+            'HOST': 'ec2-54-197-100-79.compute-1.amazonaws.com',
 
             'PORT': '5432',
 
