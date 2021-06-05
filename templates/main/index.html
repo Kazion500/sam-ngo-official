@@ -1,22 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
 <div class="page-wrapper">
- {% if messages %} {% for message in messages %}
-          <div
-            class="alert alert-{% if message.tags  == 'error'%}danger {% else %}success {% endif %} alert-dismissible fade show  "
-            role="alert"
-          >
-            {{ message }}
-            <button
-              type="button"
-              class="close"
-              data-dismiss="alert"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          {% endfor %} {% endif %}
   <section class="main-slider" style="position: relative">
     <div class="swiper-slide">
       <video
@@ -252,6 +236,23 @@
         </div>
         <!-- /.col-lg-5 -->
         <div class="col-lg-7">
+
+         {% if messages %} {% for message in messages %}
+          <div
+            class="alert alert-{% if message.tags  == 'error'%}danger {% else %}success {% endif %} alert-dismissible fade show  "
+            role="alert"
+          >
+            {{ message }}
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endfor %} {% endif %}
          
           <form method="POST" action="{% url 'home' %}">
             {% csrf_token %}
