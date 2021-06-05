@@ -1,2 +1,2 @@
-https://sam-ngo.herokuapp.com/
+release: python manage.py migrate
 web: gunicorn core.wsgi
