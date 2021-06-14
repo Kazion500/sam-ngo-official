@@ -156,13 +156,13 @@
 <div style="background-color: white" class="mobile-nav__wrapper">
   <div class="mobile-nav__overlay mobile-nav__toggler"></div>
   <!-- /.mobile-nav__overlay -->
-  <div class="mobile-nav__content">
-    <span class="mobile-nav__close mobile-nav__toggler"
+  <div class="mobile-nav__content" style="background-color: white;">
+    <span class="mobile-nav__close mobile-nav__toggler text-dark"
       ><i class="far fa-times"></i
     ></span>
 
     <div class="logo-box">
-      <a href="index.html" aria-label="logo image"
+      <a href="{% url 'home' %}" aria-label="logo image"
         ><img src="{% static 'assets/images/logo.png' %}" width="101" alt=""
       /></a>
     </div>
@@ -170,10 +170,10 @@
     <div class="mobile-nav__container"></div>
     <!-- /.mobile-nav__container -->
 
-    <ul class="mobile-nav__contact list-unstyled">
+    <ul class="mobile-nav__contact list-unstyled" >
       <li>
         <i class="azino-icon-email"></i>
-        <a href="mailto:needhelp@azino.com">project@samgroup.world</a>
+        <a href="mailto:needhelp@azino.com" class='text-dark'>project@samgroup.world</a>
       </li>
       {% comment %} <li>
         <i class="azino-icon-telephone"></i>
@@ -184,14 +184,11 @@
     <div class="mobile-nav__top">
       <!-- /.mobile-nav__language -->
       <div class="mobile-nav__social">
-        <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="facebook"
+        <a href="#" aria-label="twitter" class='text-dark' ><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="facebook" class='text-dark'
           ><i class="fab fa-facebook-square"></i
         ></a>
-        <a href="#" aria-label="pinterest"
-          ><i class="fab fa-pinterest-p"></i
-        ></a>
-        <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="instagram" class='text-dark'><i class="fab fa-instagram"></i></a>
       </div>
       <!-- /.mobile-nav__social -->
     </div>

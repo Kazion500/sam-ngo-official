@@ -3357,12 +3357,12 @@ h6 {
 .main-slider {
   overflow: hidden;
   position: relative;
-  height: 90vh;
+  height: 80vh;
 }
 
 @media (max-width: 768px) {
   .main-slider {
-    height: 50vh;
+    height: 60vh;
   }
 }
 
