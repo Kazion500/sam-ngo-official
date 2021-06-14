@@ -3357,7 +3357,13 @@ h6 {
 .main-slider {
   overflow: hidden;
   position: relative;
-  height: 750px;
+  height: 90vh;
+}
+
+@media (max-width: 768px) {
+  .main-slider {
+    height: 50vh;
+  }
 }
 
 .main-slider .swiper-slide {
