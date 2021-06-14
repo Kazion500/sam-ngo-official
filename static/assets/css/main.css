@@ -38,7 +38,7 @@ body {
   opacity: 1;
 }
 
-#img-profile{
+#img-profile {
   background: #000;
   cursor: pointer;
 }
@@ -3357,6 +3357,7 @@ h6 {
 .main-slider {
   overflow: hidden;
   position: relative;
+  height: 750px;
 }
 
 .main-slider .swiper-slide {
