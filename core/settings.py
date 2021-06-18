@@ -82,17 +82,17 @@ else:
 
         'default': {
 
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': env("DB_ENGINE"),
 
-            'NAME': 'd8ckdaccoq3i0m',
+            'NAME': env("DB_NAME"),
 
-            'USER': 'yxyyehlsqhmufk',
+            'USER': env("DB_USER"),
 
-            'PASSWORD': '71ca5688359fe930b153d6d8fa0168a3599708ec243f5216823992935eb50e3e',
+            'PASSWORD': env("DB_PASSWORD"),
 
-            'HOST': 'ec2-54-197-100-79.compute-1.amazonaws.com',
+            'HOST': env("DB_HOST"),
 
-            'PORT': '5432',
+            'PORT': env("DB_PORT"),
 
         }
 
