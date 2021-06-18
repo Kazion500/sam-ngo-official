@@ -2,49 +2,40 @@
 
 <div class="page-wrapper">
   <section class="main-slider">
-    <div class="swiper-slide">
-      <video
-        id="video-world"
-        class="bg-video"
-        autoplay
-        muted
-        loop
-        style="
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          min-width: 100%;
-          min-height: 100%;
-          
-        "
-      >
-        <source src="{% static 'assets/video/world.webm' %}" type="video/webm" />
-      </video>
-      {% comment %} <div class="container">
-        <div class="row justify-content-end">
-          <div
-            class="col-xl-7 col-lg-12 text-right text-white"
-            style="position: relative; z-index: 1"
-          >
-            <p>Help the poor in need</p>
-            <h2>
-              Lend the <br />
-              helping hand <br />
-              get involved.
-            </h2>
-            <a
-              href="#"
-              data-target=".donate-options"
-              class="scroll-to-target thm-btn dynamic-radius"
-              >Start Donating</a
-            >
-            <!-- /.thm-btn dynamic-radius -->
-          </div>
-          <!-- /.col-lg-7 text-right -->
-        </div>
-        <!-- /.row -->
-      </div> {% endcomment %}
+    <video
+      id="video-world"
+      class="bg-video"
+      autoplay
+      muted
+      loop
+      style="
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+      "
+    >
+      <source src="{% static 'assets/video/world.webm' %}" type="video/webm" />
+    </video>
+    <div
+      style="
+        position: absolute;
+        top:0;
+        bottom:0;
+        width: 100%;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
+      "
+    >
+      <p class="text-white">Help the poor in need</p>
+      <h2 class="text-white">
+        Lend the <br />
+        helping hand <br />
+        get involved.
+      </h2>
     </div>
+
     <!-- /.swiper-container thm-swiper__slider -->
   </section>
 
@@ -75,6 +66,7 @@
           </p>
         </div>
         <!-- /.col-lg-6 -->
+        {% comment %}
         <div class="col-lg-6">
           <div
             class="about-counter__image clearfix wow fadeInRight"
@@ -96,6 +88,7 @@
           </div>
           <!-- /.about-counter__image -->
         </div>
+        {% endcomment %}
         <!-- /.col-lg-6 -->
       </div>
       <!-- /.row -->
@@ -124,17 +117,31 @@
             </div>
             <!-- /.block-title -->
             <p class="block-text mb-40 pr-10">
-             Join us as we make the world a better place!!
+              Join us as we make the world a better place!!
             </p>
           </div>
           <!-- /.become-volunteer__content -->
         </div>
         <!-- /.col-lg-5 -->
         <div class="col-lg-7">
-
-         {% if messages %} {% for message in messages %}
+          {% if messages %} {% for message in messages %}
           <div
-            class="alert alert-{% if message.tags  == 'error'%}danger {% else %}success {% endif %} alert-dismissible fade show  "
+            class="
+              alert alert-{%
+              if
+              message.tags
+              ==
+              'error'%}danger
+              {%
+              else
+              %}success
+              {%
+              endif
+              %}
+              alert-dismissible
+              fade
+              show
+            "
             role="alert"
           >
             {{ message }}
@@ -148,7 +155,7 @@
             </button>
           </div>
           {% endfor %} {% endif %}
-         
+
           <form method="POST" action="{% url 'home' %}">
             {% csrf_token %}
             <div class="form-row mb-3">
