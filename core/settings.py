@@ -17,8 +17,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG")
-
+DEBUG = env("DEBUG",cast=bool)
+print(DEBUG)
 ALLOWED_HOSTS = ["sam-ngo.herokuapp.com", "localhost", "127.0.0.1"]
 
 
@@ -76,8 +76,10 @@ if DEBUG:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+    
 
 else:
+    print(env("DB_ENGINE"))
     DATABASES = {
 
         'default': {
@@ -97,6 +99,7 @@ else:
         }
 
     }
+    
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
